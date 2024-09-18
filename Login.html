@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>CAMICON</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/Login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-panel">
+            <form id="loginForm">
+                <h1>Login</h1>
+                <label class="color" for="username">Username:</label>
+                <br>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label class="color" for="password">Password:</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <button type="button" class="toggle-password contra" onclick="togglePasswordVisibility()">🔓</button>
+                </div>
+                <br>
+
+                <button type="button" onclick="checkLogin()">Login</button>
+            </form>
+        </div>
+
+        <div class="image-panel">
+            <img src="assets/images/fondo.jpg" alt="Imagen de fondo">
+        </div>
+    </div>
+
+    <script src="assets/js/login.js"></script>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById('password');
+            var toggleButton = document.querySelector('.toggle-password');
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleButton.textContent = '🔐';
+            } else {
+                passwordField.type = 'password';
+                toggleButton.textContent = ' 🔓';
+            }
+        }
+    </script>
+</body>
+
+</html>
